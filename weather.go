@@ -31,9 +31,17 @@ func main() {
 
 	defer resp.Body.Close()
 	get_wes.Getwes(resp)
+
 	msg := flag.Bool("a", false, "sdf")
+	msg_l := flag.Bool("l", false, "location")
+
 	flag.Parse()
-	if *msg == true {
-		fmt.Println(get_wes.Getwes_t())
+	Check_msg(*msg, get_wes.Getwes_t)
+	Check_msg(*msg_l, get_wes.Getwes_l)
+}
+
+func Check_msg(check bool, getwes func() string) {
+	if check == true {
+		fmt.Println(getwes())
 	}
 }

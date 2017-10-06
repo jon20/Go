@@ -33,3 +33,10 @@ func Getwes_t() string {
 	res := wes.(string)
 	return (res)
 }
+
+func Getwes_l() string {
+	wes := (weather.(map[string]interface{})["title"]).(string)
+
+	//res := wes.(string)
+	return (wes)
+}

@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+
+	scan "github.com/mattn/go-scan"
 )
 
 var weather interface{}
@@ -23,12 +25,22 @@ func Getwes(response *http.Response) {
 		os.Exit(1)
 	}
 
-	//res := weather.(map[string]interface{})["description"]
-	//fmt.Println((weather.(map[string]interface{})["location"]).(map[string]interface{})["prefecture"])
-	//fmt.Println(res.(map[string]interface{})["text"])
 }
 
-func Getwes_t() string {
+func Getwes_d() {
+	var day_td string
+	var day_tm string
+	var td string
+	var tm string
+	scan.ScanTree(weather, "/forecasts[0]/telop", &td)
+	scan.ScanTree(weather, "/forecasts[1]/telop", &tm)
+	scan.ScanTree(weather, "/forecasts[0]/date", &day_td)
+	scan.ScanTree(weather, "/forecasts[1]/date", &day_tm)
+	fmt.Println(day_td+" "+td,
+		"\n"+day_tm+" "+tm)
+}
+
+func Getwes_a() string {
 	wes := weather.(map[string]interface{})["description"].(map[string]interface{})["text"]
 	res := wes.(string)
 	return (res)
@@ -36,7 +48,5 @@ func Getwes_t() string {
 
 func Getwes_l() string {
 	wes := (weather.(map[string]interface{})["title"]).(string)
-
-	//res := wes.(string)
 	return (wes)
 }

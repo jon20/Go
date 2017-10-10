@@ -12,6 +12,7 @@ import (
 
 func main() {
 	values := url.Values{}
+	var def bool = true
 	//Get ID env
 	otenki := os.Getenv("otenki")
 
@@ -36,12 +37,19 @@ func main() {
 	msg_l := flag.Bool("l", false, "location")
 
 	flag.Parse()
-	Check_msg(*msg, get_wes.Getwes_t)
-	Check_msg(*msg_l, get_wes.Getwes_l)
+	Check_flag(*msg, &def, get_wes.Getwes_a)
+	Check_flag(*msg_l, &def, get_wes.Getwes_l)
+	if def == true {
+		get_wes.Getwes_d()
+	}
 }
 
-func Check_msg(check bool, getwes func() string) {
+func Check_flag(check bool, def *bool, getwes func() string) {
+
 	if check == true {
 		fmt.Println(getwes())
+		if *def == true {
+			*def = false
+		}
 	}
 }

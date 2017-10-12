@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	scan "github.com/mattn/go-scan"
+	"github.com/mattn/go-scan"
 )
 
 var weather interface{}

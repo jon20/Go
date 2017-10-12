@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"os"
 
-	"./get_wes"
+	"github.com/jon20/Weather-Command/get_wes"
 )
 
 func main() {

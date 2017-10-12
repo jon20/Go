@@ -1,4 +1,6 @@
 language: go
 
+env:
+-  otenki=130010
 script:
  - go test -v

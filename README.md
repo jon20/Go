@@ -11,12 +11,12 @@ Travis CI: [![Build Status](https://travis-ci.org/jon20/Weather-Command.svg?bran
 
 
 ## Set env
- set your location iD. example KURUME
- `otenki= 400040`
+ set your location iD. example KURUME  
+ `otenki= 400040`  
  
  your location ID is [here](http://weather.livedoor.com/)
  
  
 ## option
- `-a` more weather description 
+ `-a` more weather description  
   `-l`  now set location

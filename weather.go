@@ -10,9 +10,19 @@ import (
 	"github.com/jon20/Weather-Command/get_wes"
 )
 
+var (
+	flag_a bool = true
+	flag_l bool = true
+)
+
+func init() {
+	flag.BoolVar(&flag_a, "a", false, "getwes")
+	flag.BoolVar(&flag_l, "l", false, "getwes_l")
+	flag.Parse()
+}
+
 func main() {
 	values := url.Values{}
-	var def bool = true
 	//Get ID env
 	otenki := os.Getenv("otenki")
 
@@ -33,23 +43,11 @@ func main() {
 	defer resp.Body.Close()
 	get_wes.Getwes(resp)
 
-	msg := flag.Bool("a", false, "sdf")
-	msg_l := flag.Bool("l", false, "location")
-
-	flag.Parse()
-	Check_flag(*msg, &def, get_wes.Getwes_a)
-	Check_flag(*msg_l, &def, get_wes.Getwes_l)
-	if def == true {
+	if flag_a != false {
+		fmt.Println(get_wes.Getwes_a())
+	} else if flag_l != false {
+		fmt.Println(get_wes.Getwes_l())
+	} else {
 		get_wes.Getwes_d()
-	}
-}
-
-func Check_flag(check bool, def *bool, getwes func() string) {
-
-	if check == true {
-		fmt.Println(getwes())
-		if *def == true {
-			*def = false
-		}
 	}
 }

@@ -5,8 +5,8 @@
 Travis CI: [![Build Status](https://travis-ci.org/jon20/Weather-Command.svg?branch=master)](https://travis-ci.org/jon20/Weather-Command)
 
 - How to use
- - Set env (#set-env)
- - command option (#option)
+ - [Set env] (#set-env)
+ - [command option] (#option)
 
 
 
@@ -19,4 +19,4 @@ Travis CI: [![Build Status](https://travis-ci.org/jon20/Weather-Command.svg?bran
  
 ## option
  `-a` more weather description  
-  `-l`  now set location
+  `-l`  now set your location

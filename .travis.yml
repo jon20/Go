@@ -1,8 +1,8 @@
 language: go
-
 notifications:
-  slack: jongz:h0wIETvFV3lTkArZN1Upue1C
+  slack:
+    secure: Wd3MqBZ1G+FkELYtFJnuf0FbcSXV1KrJnqBoMGpW/HjpazURBhJShgD+Dd1n49SG0Xu1rvxekfUQcAtVdHPRTs842vA9Snwdic5/040sY2kFlhukZKSGWUbBzeYEKBRd2bQhpSIjMoCzbfywj79ebqHE6D/vILOgXkMl/szBlyjrAKJQCrzWb60JfUf/vq3oPOsD8APbPsGX6ecsigF9bPsiIg/XWwkKALpw7s/2qdA5mOLRtJA+wj+jXN9WorhBg/7X2jWKlMLGFskOtSzM1cGZl2gP51IBA1akGBSrXrEEw/3wGAkie5TML+xX0HR4TYSO6V248nlYLdoO50m4oyM0mddFHQpSBAPT35eVnRF2QimaRGV9KRkckdWySfdMQtLcCqE4SI7n4ov5ZF5YmZ3Ybr9/Sm4162N176uVrDXqJVF9fDKHkOjiWRYlHGCu3OkZAbToQuIicCK1YUN8iARyMmpLF2Sh4AJ++LnXbxRtH53b/AlkYBadqx4ZP3Jo31jWmCRUE6IPjrSKffFtaE3aMKx51GAEF158CzWCztMnLal1lgftVtwb3BY6hE7V7l6xTgfG6NEAk8t1R4XoBGPDYJhWEF/67VWJ1iEZSnJllPh2ftT4vyGl6GtPln2TaDVm73bFpc+LR60bCJig9HwURLGp7mrrlfxtYQ4iMWk=
 env:
- -  otenki=130010
+- otenki=130010
 script:
- - go test -v
+- go test -v

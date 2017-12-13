@@ -19,5 +19,5 @@ Travis CI: [![Build Status](https://travis-ci.org/jon20/Weather-Command.svg?bran
  
 ## option
  `-a` more weather description  
-  `-l`  now set your location
+  `-l`  now set your location  
   `-env` show now set your environment variable

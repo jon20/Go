@@ -11,13 +11,15 @@ import (
 )
 
 var (
-	flag_a bool = true
-	flag_l bool = true
+	flag_a   bool = true
+	flag_l   bool = true
+	flag_env bool = true
 )
 
 func init() {
 	flag.BoolVar(&flag_a, "a", false, "getwes")
 	flag.BoolVar(&flag_l, "l", false, "getwes_l")
+	flag.BoolVar(&flag_env, "env", false, "show env")
 	flag.Parse()
 }
 
@@ -47,6 +49,8 @@ func main() {
 		fmt.Println(get_wes.Getwes_a())
 	} else if flag_l != false {
 		fmt.Println(get_wes.Getwes_l())
+	} else if flag_env != false {
+		fmt.Println(os.Getenv("otenki"))
 	} else {
 		get_wes.Getwes_d()
 	}

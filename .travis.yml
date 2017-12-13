@@ -1,5 +1,7 @@
 language: go
 
+notifications:
+  slack: jongz:h0wIETvFV3lTkArZN1Upue1C
 env:
  -  otenki=130010
 script:
